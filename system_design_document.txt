@@ -1,0 +1,6 @@
+
+tener users
+tener movies
+rentar acceso a las movies
+implementar un Least Recently Used data structure para movies
+recomendar movies en funcion del LRU
