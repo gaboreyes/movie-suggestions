@@ -9,3 +9,8 @@ build a Least Recently Used data structure for movies
 suggest movies using the LRU
 only admins can see the full users
 
+----------
+
+I wanted to implement a LRU, a common use case for this I figure would be recommending
+something based on the most recently used element. Thats why I figure a movie recommendation
+service was a good fit.
