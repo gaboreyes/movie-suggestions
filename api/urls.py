@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework import routers
-from .views import UsersView, MoviesView
+from .views import UsersView, MoviesView, IndexView
 
 
 router = routers.DefaultRouter()
@@ -9,4 +9,5 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path('users', UsersView.as_view()),
     path('movies', MoviesView.as_view()),
+    path('', IndexView.as_view()),
 ]

@@ -6,6 +6,21 @@ from movies.models import Movie
 from . import serializers
 
 
+class IndexView(APIView):
+    """
+    Dict with the existing urls for the API. Only has a GET endpoint.
+    """
+    def get(self, request):
+        """
+        Returns a dict with valid urls
+        """
+        valid_urls = {
+            "users": "api/users/",
+            "movies": "api/movies/"
+        }
+        return Response(valid_urls)
+
+
 class UsersView(APIView):
     """
     Foo
