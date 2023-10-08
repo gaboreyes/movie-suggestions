@@ -1,6 +1,16 @@
 
-tener users
-tener movies
-rentar acceso a las movies
-implementar un Least Recently Used data structure para movies
-recomendar movies en funcion del LRU
+have users
+have movies
+Add linting with flake8
+
+TODO:
+rent movies
+build a Least Recently Used data structure for movies
+suggest movies using the LRU
+only admins can see the full users
+
+----------
+
+I wanted to implement a LRU, a common use case for this I figure would be recommending
+something based on the most recently used element. Thats why I figure a movie recommendation
+service was a good fit.

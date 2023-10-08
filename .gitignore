@@ -72,10 +72,9 @@ requirements/private.txt
 tests/__init__.py
 
 # Development task artifacts
-default.db
 venv-movies
 
 # Database
+default.db
 default_bk.db
 db.sqlite3
-movieSuggestions/db.sqlite3
