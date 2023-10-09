@@ -7,6 +7,6 @@ from django.contrib.auth.models import User
 class RentedMovie(models.Model):
     movie_id = models.ForeignKey(Movie, on_delete=models.CASCADE)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    rented_until = models.DateTimeField(auto_now_add=True)
+    rented_until = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
