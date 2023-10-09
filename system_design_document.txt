@@ -2,9 +2,9 @@
 have users
 have movies
 Add linting with flake8
+rent movies
 
 TODO:
-rent movies
 build a Least Recently Used data structure for movies
 suggest movies using the LRU
 only admins can see the full users
@@ -14,3 +14,5 @@ only admins can see the full users
 I wanted to implement a LRU, a common use case for this I figure would be recommending
 something based on the most recently used element. Thats why I figure a movie recommendation
 service was a good fit.
+
+Database will be the default sqlite from django due to this not being focused on the DB aspec of things
