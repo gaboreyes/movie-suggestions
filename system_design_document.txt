@@ -16,3 +16,14 @@ something based on the most recently used element. Thats why I figure a movie re
 service was a good fit.
 
 Database will be the default sqlite from django due to this not being focused on the DB aspec of things
+
+LRU design explanation:
+The LRU has a head and a tail representing the start and the end of the queue.
+The LRU is a hashmap populated with <keys> being movie ids.
+And the <values> are objects from a double linked list with nodes.
+
+These nodes represent movies from the database.
+Each node has a pointer to the next most recent movie in the LRU
+And a pointer the previously recent movie before this node's insertion
+The overall most recent movie has the head of the LRU as next node
+The overall oldest movie has the tail of the LRU as previos node
