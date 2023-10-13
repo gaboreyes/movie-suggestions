@@ -1,5 +1,6 @@
 
 class Node:
+    """ Objects represent nodes inside a linked list structure """
 
     def __init__(self, key, value, next=None, prev=None) -> None:
         self.key = key
@@ -9,6 +10,8 @@ class Node:
 
 
 class LRU:
+    """ Represents a hash map filled with Nodes """
+
     cache = {}
     cache_size = 0
 
