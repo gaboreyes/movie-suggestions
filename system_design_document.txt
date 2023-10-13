@@ -27,3 +27,14 @@ Each node has a pointer to the next most recent movie in the LRU
 And a pointer the previously recent movie before this node's insertion
 The overall most recent movie has the head of the LRU as next node
 The overall oldest movie has the tail of the LRU as previos node
+
+The LRU will have 3 common operations:
+-detach a node from the linked list
+-add a node to the start of the linked list (prepend)
+-remove a node from the cache object to mantain it's desired size
+
+Note: there is a special case when the cache only has Head and Tail (meaning it's empty)
+when trying to add a node to it, we can not use the prepend method because that method 
+needs a relation to exists between the head.next node and tail.prev node. 
+But when the LRU is first created both Head and Tail point at None values
+

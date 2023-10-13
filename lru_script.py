@@ -1,25 +1,3 @@
-"""
-NODE
-{
-    prev: nodo
-    next: nodo
-    value: movie from db
-    key: movie id
-}
-
-Least Recently Used
-{
-    -----------------------
-    movie1: node object,
-    movie2: node object,
-    movie3: node object
-    -----------------------
-    movie2: node object,
-    movie3: node object,
-    movie4: node object
-    -----------------------
-}
-"""
 
 class Node:
 
@@ -53,12 +31,14 @@ class LRU:
         node.prev = None
 
     def prepend(self, node) -> None:
+        """ Adds a node at the start of the cache """
         node.next = self.head.next
         node.prev = self.head
         self.head.next.prev = node
         self.head.next = node
 
     def update(self, node) -> None:
+        """ Given a node it moves it to the start of the cache following cache rules """
         if self.cache.get(node.key):
             print(f"{node.key} - Existe en cache, chekear si es el primero")
             if self.head.next == node:
@@ -77,7 +57,7 @@ class LRU:
                 self.prepend(node)
             else:
                 if self.head.next == None:
-                    print(f"La Head apunta a Tail, add {node.key} en el medio")
+                    print(f"La Head apunta a Tail, add {node.key} de primero")
                     node.next = self.tail
                     node.prev = self.head
                     self.head.next = node
@@ -123,7 +103,6 @@ if lru_cache.tail.prev == movie2 and movie2.prev == movie3 and movie3.prev == mo
     print("True backwards")
 else:
     print("False backwards")
-"""
 
     
 if lru_cache.head.next == movie3 and movie3.next == movie4 and movie4.next == movie2 and movie2.next == lru_cache.tail:
@@ -135,3 +114,4 @@ if lru_cache.tail.prev == movie2 and movie2.prev == movie4 and movie4.prev == mo
     print("True backwards")
 else:
     print("False backwards")
+"""
