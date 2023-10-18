@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator
 
 # Create your models here.
 
@@ -20,7 +21,7 @@ class Movie(models.Model):
     name = models.CharField(max_length=80)
     rating = models.IntegerField(choices=STAR_RATING)
     director = models.CharField(max_length=20)
-    duration = models.IntegerField()
+    duration = models.IntegerField(validators=[ MinValueValidator(1, message="Invalid duration time") ])
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
